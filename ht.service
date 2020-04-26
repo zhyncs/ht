@@ -1,0 +1,10 @@
+[Unit]
+StartLimitIntervalSec=0
+
+[Service]
+Restart=always
+RestartSec=1
+ExecStart=/usr/local/bin/ht -k 831143
+
+[Install]
+WantedBy=multi-user.target

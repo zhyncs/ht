@@ -1,0 +1,19 @@
+name: Lint
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@v1
+      - name: 'C++ Lint'
+        run: |
+          sudo apt install -y python3-pip
+          sudo pip3 install cpplint
+          make lint

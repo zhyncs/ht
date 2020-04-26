@@ -1,0 +1,18 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@v1
+      - name: 'C++ Build'
+        run: |
+          sudo apt install -y libssl-dev cmake
+          make cmake
